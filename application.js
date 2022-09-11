@@ -4,9 +4,13 @@
 const gridContainer = document.querySelector(".grid-container");
 const controlPanel = document.querySelector(".control-panel");
 const createGridButton = document.querySelector("#create-grid");
+const clearButton = document.querySelector("#clear");
 
 let squaresSide = 16;
 let cell = [];
+
+let newSize = document.querySelector(".grid-size-input");
+newSize.value = 16;
 
 //event listeners
 createGridButton.addEventListener("click", function () {
@@ -14,9 +18,9 @@ createGridButton.addEventListener("click", function () {
   createGrid(newSize.value);
 });
 
+clearButton.addEventListener("click", clearGrid);
+
 //set grid size
-let newSize = document.querySelector(".grid-size-input");
-newSize.value = 16;
 
 //initial grid display
 
@@ -35,6 +39,7 @@ function createGrid(squaresSide) {
     cell[i].style = "background-color: rgba(255, 255, 255, 1)";
     gridContainer.appendChild(cell[i]);
   }
+  onLoad();
 }
 
 function removeCells() {
@@ -43,6 +48,21 @@ function removeCells() {
   }
 }
 
-cell.addEventListener("mousedown", function () {
-  cell.classList.add("filled-cell");
-});
+function onLoad() {
+  let gridPixels = document.querySelectorAll(".cell");
+  gridPixels.forEach((gridPixel) =>
+    gridPixel.addEventListener("mouseover", colorGrid)
+  );
+}
+
+function colorGrid() {
+  console.log("triggers colorGrid");
+  this.style.backgroundColor = "#000000";
+}
+
+function clearGrid() {
+  console.log("Grid Cleared");
+  let allCells = document.querySelectorAll(".cell").forEach((cell) => {
+    cell.style.backgroundColor = "white";
+  });
+}

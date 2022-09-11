@@ -10,6 +10,8 @@
 .control-panel {
   width: 120px;
   background-color: yellow;
+  display: flex;
+  flex-direction: column;
 }
 
 :root {

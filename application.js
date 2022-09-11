@@ -57,7 +57,7 @@ function onLoad() {
 
 function colorGrid() {
   console.log("triggers colorGrid");
-  this.style.backgroundColor = "#000000";
+  this.style.backgroundColor = random_rgba();
 }
 
 function clearGrid() {
@@ -66,3 +66,23 @@ function clearGrid() {
     cell.style.backgroundColor = "white";
   });
 }
+
+//random colour
+function random_rgba() {
+  let o = Math.round,
+    r = Math.random,
+    s = 255;
+  return (
+    "rgba(" +
+    o(r() * s) +
+    "," +
+    o(r() * s) +
+    "," +
+    o(r() * s) +
+    "," +
+    r().toFixed(1) +
+    ")"
+  );
+}
+
+let randomColour = random_rgba();

@@ -1,3 +1,15 @@
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .grid {
   display: grid;
   grid-template-columns: auto auto;
@@ -8,10 +20,15 @@
 }
 
 .control-panel {
-  width: 120px;
+  width: 10rem;
   background-color: yellow;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 0.2em;
+  border-color: black;
+  border-style: dotted;
 }
 
 :root {
@@ -21,6 +38,10 @@
 
 .display-container {
   background-color: coral;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 0.2em;
+  border-color: black;
+  border-style: dotted;
 }
 
 .grid-container {
@@ -41,4 +62,23 @@
 
 .filled-cell {
   background-color: light-blue;
+}
+
+.panel-title {
+  font: roboto;
+  font-size: large;
+  padding: 0.5rem;
+}
+
+.control-buttons {
+  margin-top: 0.5rem;
+  background-color: coral;
+  border-radius: 0.5rem;
+  width: 100px
+}
+
+.maker {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: smaller;
+  justify-self: flex-end;
 }
